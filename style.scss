@@ -1,0 +1,476 @@
+﻿@import 'mediquery.scss';
+
+$myfont:'Space Grotesk', sans-serif;
+$secondFont: 'Philosopher', sans-serif ;
+* {
+    text-decoration: none;
+}
+html,body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background: #c1a397;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*styling header*/
+.header {
+    width: 96%;
+    margin-left: 3.38vw;
+    height: 4vh;
+    border-bottom: 1px solid #3c280d;
+    padding: 4% 1%;
+
+    @include mobile {
+        width: 90%;
+        height: 3vh;
+    }
+
+    @include landscape {
+        width: 93%;
+        height: 3vh;
+    }
+
+    @include tablet {
+        width: 93%;
+        height: 3vh;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*styling the company name*/
+.logo_name {
+    padding: 0 1%;
+    font-family: $secondFont;
+    color: #3c280d;
+    font-size: 40px;
+    margin-left: 139.5vw;
+
+    @include mobile {
+        font-size: 20px;
+        margin-left: 6.5vw;
+    }
+
+    @include tablet {
+        font-size: 36px;
+        margin-left: 25.5vw;
+    }
+
+    @include landscape {
+        margin-left: -20.5vw;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*styling the navbar */
+.navbar {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+    /*styling the navbar links*/
+    ul li {
+        font-size: 20px;
+        font-weight: 400;
+        display: inline-block;
+        list-style: none;
+        margin-right: 18.8vw;
+        margin-left: -0.2vw;
+        position: relative;
+
+        @include landscape {
+            margin-right: -9.9vw;
+            margin-left: -10.2vw;
+            font-size: 24px;
+        }
+
+        a {
+            font-family: $myfont;
+            color: #3c280d;
+
+            @include mobile {
+                display: none;
+            }
+
+            @include tablet {
+                display: none;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                color: #000;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background: #95624e;
+                transition: all .3s ease;
+            }
+
+            &:hover:before {
+                width: 100%;
+            }
+
+            &:hover {
+                transition: all .3s ease;
+                color: #be5504;
+            }
+        }
+    }
+
+    .ham-menu {
+        opacity: 0;
+        cursor: pointer;
+
+        @include mobile {
+            color: #be5504;
+            opacity: 1;
+            font-size: 1rem;
+            right: 2.80vw;
+            margin-top: 5px;
+            position: absolute;
+        }
+
+        @include tablet {
+            opacity: 1;
+            color: #be5504;
+            opacity: 1;
+            font-size: 1.5rem;
+            right: 2.17vw;
+            margin-top: 5px;
+            position: absolute;
+        }
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+.active {
+    background-color: #d1ccc6;
+    font-size: 23px;
+    padding: 8px;
+    border-radius: 8px;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*designing the logo*/
+.logoIcon {
+    width: 7.94vw;
+    border-radius: 183px;
+    cursor: pointer;
+
+    @include mobile {
+        width: 7.94vw;
+    }
+
+    @include landscape {
+        width: 7.94vw;
+    }
+
+    @include tablet {
+        width: 7.94vw;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*autoplay image slideshow*/
+.main-container {
+    width: 99.1vw;
+    height: 96.1vh;
+    margin: auto;
+    background-color: #ada399;
+    background-image: url(' https://stylecaster.com/wp-content/uploads/2019/10/retro-outfit-ideas.jpg');
+    opacity: 100%;
+    justify-content: center;
+    align-items: center;
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    animation: slideshow 4s infinite;
+
+    @include tablet {
+        width: 99.7vw;
+        height: 56.1vh;
+    }
+
+    @include mobile {
+        height: 46.1vh;
+        width: 129.9vw;
+    }
+    @include landscape{
+        width: 99.8vw;
+        height: 96.1vh;
+    }
+
+    @keyframes slideshow {
+        0% {
+            background-image: url('https://hips.hearstapps.com/hmg-prod/images/emilie-joseph-wears-sunglasses-golden-earrings-a-beige-news-photo-1641239127.jpg');
+        }
+
+        35% {
+            background-image: url('https://glaminati.com/wp-content/uploads/2022/03/tp-popular-casual-outfits-your-new-style.jpg');
+        }
+    }
+   
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*styling the bottom container and card*/
+.card1{
+    float: left;
+    width: 30%;
+    border-radius: 12px;
+
+    @include mobile{
+        float: none;
+        width: 70%;
+        margin-left: 12.2vw;
+    }
+    @include landscape{
+        width: 360px;
+    }
+    @include tablet{
+        width: 190px;
+        margin-left: 32.3vw;
+        float: none;
+    }
+}
+.bottom-container {
+    position: absolute;
+    width: 90%;
+    left: 4%;
+    padding: 7px;
+
+    @include landscape{
+        width: 570px;
+    }
+
+    .web-info {
+        font-size: 1.6vw;
+        width: 87.5vw;
+        color: papayawhip;
+        font-family: $myfont;
+        text-align: center;
+
+        @include tablet {
+            margin-top: 3.4vh;
+            font-size: 20px;
+            width: 87.5vw;
+        }
+
+        @include landscape {
+            font-size: 24px;
+            margin-left:32.73vw;
+            width: 50.8vw;
+            margin-top: 80px;
+        }
+
+        @include mobile {
+            text-align: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            width: 87.8vw;
+        }
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*designing page-break*/
+.page-break {
+    margin-top: 42.4vh;
+    height: 52.4vh;
+    width: 95%;
+    margin-left: 2.3vw;
+    opacity: 70%;
+
+    @include tablet {
+        margin-top: 86.7vh;
+    }
+
+    @include landscape {
+        margin-top: 64.5vh;
+    }
+
+    @include mobile {
+        margin-top: 65.5vh;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*designing img-text*/
+#img-text {
+    position: absolute;
+    font-size: 4.4rem;
+    margin-left: 3.9vw;
+    font-family: Arial;
+    color: transparent;
+    -webkit-text-stroke: 2px #000;
+    background-image: linear-gradient(#3c280d, #3c280d);
+    -webkit-background-clip: text;
+    font-weight: bolder;
+    background-position: -1190px 0;
+    background-repeat: no-repeat;
+    animation: textColor 4s linear infinite alternate;
+
+    @keyframes textColor {
+        100% {
+            background-position: 0 0;
+        }
+    }
+
+    @include tablet {
+        font-size: 4.2rem;
+        -webkit-text-stroke: 2px #000;
+        margin-top: -51.7vh;
+        background-image: linear-gradient(#3c280d, #3c280d);
+    }
+
+    @include mobile {
+        font-size: 3.3rem;
+        -webkit-text-stroke: 2px #000;
+        margin-top: -51.7vh;
+        background-image: linear-gradient(#3c280d, #3c280d);
+    }
+
+    @include landscape {
+        margin-top: -24.7vh;
+        margin-left: 4.0vw;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*designing the last heading*/
+h1 {
+    text-align: center;
+    font-size: 53px;
+    color: #3C280D;
+    font-family: $myfont;
+
+    @include landscape {
+        font-size: 83px;
+    }
+
+    @include mobile {
+        font-size: 32px;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*designing footer*/
+footer {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    background: #3c280d;
+    margin-top: 6.4vh;
+    align-items: center;
+    padding: 20px 1px;
+    justify-content: center;
+    flex-direction: column;
+
+    @include landscape {
+        margin-top: 17.8vh;
+        position: relative;
+        padding: 20px -6px;
+    }
+
+    @include mobile {
+        margin-top: 9.8vh;
+    }
+
+    @include tablet {
+        margin-top: 10.8vh;
+    }
+
+    .social-media {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 12px;
+
+        li {
+            list-style: none;
+            transition: 0.5s;
+
+            &:hover {
+                transform: translateY(-6px);
+            }
+        }
+
+        a {
+            font-size: 1.6rem;
+            margin: 0 20px;
+            color: #c1a397;
+            transition: 0.5s;
+            opacity: 0.6;
+
+            @include landscape {
+                font-size: 2.1rem;
+            }
+
+            @include mobile {
+                font-size: 1.2rem;
+                margin: 0 12px;
+            }
+
+            &:hover {
+                opacity: 1.5;
+                color: #ada399;
+            }
+        }
+    }
+
+    .menu-links {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 12px;
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            font-size: 1.3rem;
+            margin: 11px 20px;
+            color: #c1a397;
+            display: inline-block;
+            font-family: $myfont;
+            transition: 0.4s;
+            opacity: 0.5;
+
+            @include landscape {
+                font-size: 1.7rem;
+            }
+
+            @include mobile {
+                font-size: 0.8rem;
+                margin: 0px 17px;
+            }
+
+            &:hover {
+                color: #ada399;
+                opacity: 1.2;
+                transform: translatey(6px);
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .copyright {
+        color: #c1a297;
+        opacity: 0.7;
+        font-size: 14px;
+        margin-left: 2.7vw;
+        text-align: center;
+
+        @include landscape {
+            margin-left: 1.7vw;
+            font-size: 17px;
+        }
+
+        @include mobile {
+            margin-left: 10.8vw;
+            font-size: 12px;
+        }
+    }
+}
+

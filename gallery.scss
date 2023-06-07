@@ -1,0 +1,605 @@
+﻿@import 'mediquery.scss';
+
+$myfont: 'Space Grotesk', sans-serif;
+$secfont: 'Philosopher', sans-serif;
+
+* {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+    background: #c1a397;
+    box-sizing: border-box;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+.header {
+    width: 96%;
+    margin-left: 3.38vw;
+    height: 4vh;
+    border-bottom: 1px solid #3c280d;
+    padding: 4% 1%;
+
+    @include mobile {
+        width: 90%;
+        height: 3vh;
+    }
+
+    @include landscape {
+        width: 93%;
+        height: 3vh;
+    }
+
+    @include tablet {
+        width: 93%;
+        height: 3vh;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*styling the company name*/
+.logo_name {
+    padding: 0 1%;
+    font-family: $secfont;
+    color: #3c280d;
+    font-size: 40px;
+    margin-left: 139.5vw;
+
+    @include mobile {
+        font-size: 20px;
+        margin-left: 6.5vw;
+    }
+
+    @include tablet {
+        font-size: 36px;
+        margin-left: 25.5vw;
+    }
+
+    @include landscape {
+        margin-left: -20.5vw;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*styling the navbar */
+.navbar {
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 0;
+    /*styling the navbar links*/
+    ul li {
+        font-size: 20px;
+        font-weight: 400;
+        display: inline-block;
+        list-style: none;
+        margin-right: 18.8vw;
+        margin-left: -0.2vw;
+        position: relative;
+
+        @include landscape {
+            margin-right: -9.9vw;
+            margin-left: -10.2vw;
+            font-size: 24px;
+        }
+
+        a {
+            font-family: $myfont;
+            color: #3c280d;
+
+            @include mobile {
+                display: none;
+            }
+
+            @include tablet {
+                display: none;
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                color: #000;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 2px;
+                background: #95624e;
+                transition: all .3s ease;
+            }
+
+            &:hover:before {
+                width: 100%;
+            }
+
+            &:hover {
+                transition: all .3s ease;
+                color: #be5504;
+            }
+        }
+    }
+
+    .ham-menu {
+        opacity: 0;
+        cursor: pointer;
+
+        @include mobile {
+            color: #be5504;
+            opacity: 1;
+            font-size: 1rem;
+            right: 2.80vw;
+            margin-top: 5px;
+            position: absolute;
+        }
+
+        @include tablet {
+            opacity: 1;
+            color: #be5504;
+            opacity: 1;
+            font-size: 1.5rem;
+            right: 2.17vw;
+            margin-top: 5px;
+            position: absolute;
+        }
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+.active {
+    background-color: #d1ccc6;
+    font-size: 23px;
+    padding: 8px;
+    border-radius: 8px;
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+
+/*designing the logo*/
+.logoIcon {
+    width: 7.94vw;
+    border-radius: 183px;
+    cursor: pointer;
+
+    @include mobile {
+        width: 7.94vw;
+    }
+
+    @include landscape {
+        width: 7.94vw;
+    }
+
+    @include tablet {
+        width: 7.94vw;
+    }
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*designing the main gallery heading*/
+h1 {
+    text-align: center;
+    font-size: 53px;
+    color: #3C280D;
+    font-family: $myfont;
+
+    @include landscape {
+        font-size: 83px;
+    }
+
+    @include mobile {
+        font-size: 32px;
+    }
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*styling the image container*/
+.gallery {
+    width: 100%;
+    height: 100vh;
+    background: #c1a397;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include landscape {
+        height: 80vh;
+    }
+
+    @include tablet {
+        height: 80vh;
+    }
+
+    @include mobile {
+        height: 85vh;
+    }
+
+    .image {
+        width: 150px;
+        height: 520px;
+        margin: 10px;
+        border-radius: 60px;
+        position: relative;
+        transition: width 0.3s;
+        background-image: url('galleryimgs/outfit6.jpg');
+        background-size: cover;
+        background-position: center;
+
+        @include mobile {
+            height: 420px;
+        }
+
+        &:nth-child(2) {
+            background-image: url('galleryimgs/outfit7.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        &:nth-child(3) {
+            background-image: url('galleryimgs/outfit8.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        &:nth-child(4) {
+            background-image: url('galleryimgs/outfit9.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        &:nth-child(5) {
+            background-image: url('galleryimgs/outfit10.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        &:nth-child(6) {
+            background-image: url('galleryimgs/outfit11.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        h2 {
+            color: #000;
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            opacity: 0;
+            transition: bottom 0.6s, opacity 0.6s;
+
+            @include tablet {
+                left: 10px;
+            }
+
+            @include mobile {
+                left: 7px;
+            }
+        }
+
+        &:hover {
+            width: 250px;
+            cursor: pointer;
+
+            h2 {
+                opacity: 1;
+                bottom: 70px;
+            }
+        }
+    }
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/*input label*/
+input {
+    display: none;
+}
+/*designing bottom gallery*/
+.main-gallery-container {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+    h3 {
+        font-weight: 800;
+        font-size: 55px;
+        position: relative;
+        margin-bottom: 50px;
+
+        @include landscape {
+            font-size: 76px;
+        }
+
+        @include mobile {
+            font-size: 25px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 43.2vw;
+            height: 1.5px;
+            background-color: #000;
+            left: 50%;
+            bottom: 1%;
+            transform: translate(-50%);
+
+            @include mobile {
+                width: 62.3vw;
+                left: 50%;
+            }
+        }
+    }
+    /*-----------------------------------------------------------------------------------------------------------------------------------*/
+    /*designing selection bar*/
+    .selection-bar {
+        background-color: rgb(225,225,225);
+        width: 90%;
+        margin: 0 auto 30px;
+        display: flex;
+        align-items: center;
+        border-radius: 2px;
+        font-family: $myfont;
+        height: 40px;
+        box-shadow: 3px 3px 6px black;
+
+        @include mobile {
+            font-size: 11px;
+        }
+
+        label {
+            height: 100%;
+            padding: 0 30px;
+            margin: 0 100px 0 100px;
+            line-height: 40px;
+            cursor: pointer;
+            transition: 0.4s;
+            color: slategray;
+            display: inline-block;
+
+            @include landscape {
+                margin: 0 7.25vw 0 7.25vw;
+            }
+
+            @include tablet {
+                margin: 0 4.25vw 0 4.25vw;
+                padding: 0 11px;
+            }
+
+            @include mobile {
+                margin: 0 2.25vw 0 2.25vw;
+                padding: 0 9px;
+            }
+
+            &:hover {
+                font-weight: 700;
+                color: black;
+            }
+        }
+    }
+
+    .image-gallery {
+        width: 80%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 18px;
+        }
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 18px;
+        }
+
+        .style {
+            position: relative;
+            border-radius: 7px;
+            height: 420px;
+            cursor: pointer;
+            transition: .5s;
+
+            @include mobile {
+                height: 260px;
+            }
+
+            @include tablet {
+                height: 320px;
+            }
+
+            .pics {
+                border-radius: 7px;
+                width: 100%;
+                height: 100%;
+                transition: 0.4s;
+
+                &:hover {
+                    outline: 0.2rem solid #3c280d;
+                    outline-offset: 0;
+                    transform: scale(1.02);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+/*pictures showing based on category*/
+#category1:checked ~ .main-gallery-container .image-gallery .style {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+}
+
+#category2:checked ~ .main-gallery-container .image-gallery .classy {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+}
+
+#category2:checked ~ .main-gallery-container .image-gallery .cute,
+#category2:checked ~ .main-gallery-container .image-gallery .soft {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+#category3:checked ~ .main-gallery-container .image-gallery .cute {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+}
+
+#category3:checked ~ .main-gallery-container .image-gallery .classy,
+#category3:checked ~ .main-gallery-container .image-gallery .soft {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+#category4:checked ~ .main-gallery-container .image-gallery .soft {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+    transition: 0.5s;
+}
+
+#category4:checked ~ .main-gallery-container .image-gallery .cute,
+#category4:checked ~ .main-gallery-container .image-gallery .classy {
+    opacity: 0;
+    transform: scale(0);
+    position: absolute;
+    transition: 0s;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------*/
+/*designing footer*/
+footer {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    background: #3c280d;
+    margin-top: 19.4vh;
+    align-items: center;
+    padding: 20px 1px;
+    justify-content: center;
+    flex-direction: column;
+
+    @include landscape {
+        margin-top: 17.8vh;
+        position: relative;
+        padding: 20px -6px;
+    }
+
+    @include mobile {
+        margin-top: 9.8vh;
+    }
+
+    @include tablet {
+        margin-top: 10.8vh;
+    }
+
+    .social-media {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 12px;
+
+        li {
+            list-style: none;
+            transition: 0.5s;
+
+            &:hover {
+                transform: translateY(-6px);
+            }
+        }
+
+        a {
+            font-size: 1.6rem;
+            margin: 0 20px;
+            color: #c1a397;
+            transition: 0.5s;
+            opacity: 0.6;
+
+            @include landscape {
+                font-size: 2.1rem;
+            }
+
+            @include mobile {
+                font-size: 1.2rem;
+                margin: 0 12px;
+            }
+
+            &:hover {
+                opacity: 1.5;
+                color: #ada399;
+            }
+        }
+    }
+
+    .menu-links {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 12px;
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            font-size: 1.3rem;
+            margin: 11px 20px;
+            color: #c1a397;
+            display: inline-block;
+            font-family: $myfont;
+            transition: 0.4s;
+            opacity: 0.5;
+
+            @include landscape {
+                font-size: 1.7rem;
+            }
+
+            @include mobile {
+                font-size: 0.8rem;
+                margin: 0px 17px;
+            }
+
+            &:hover {
+                color: #ada399;
+                opacity: 1.2;
+                transform: translatey(6px);
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .copyright {
+        color: #c1a297;
+        opacity: 0.7;
+        font-size: 14px;
+        margin-left: 2.7vw;
+        text-align: center;
+
+        @include landscape {
+            margin-left: 1.7vw;
+            font-size: 17px;
+        }
+
+        @include mobile {
+            margin-left: 10.8vw;
+            font-size: 12px;
+        }
+    }
+}
